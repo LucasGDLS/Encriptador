@@ -172,6 +172,11 @@
     color: #fff;
     margin-right: 1%;
 }
+.btn-copiar:hover{
+    width: 14.5%;
+    padding: 0.8%;
+
+}
 .encriptado{
     display: flex;
     justify-content: center;

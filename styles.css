@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
 }
-html, body {
-    height: 100%;
-}
 .header {
     width: 100%;
     background-color: #0a3871;
@@ -43,6 +40,7 @@ html, body {
     min-height: 100%;
     padding-top: 100px; /* Altura del header */
     padding-bottom: 50px
+    
 
 }
 .texto {
@@ -243,11 +241,11 @@ html, body {
 
 @media (max-width: 57.5em){
     .container{
-        display: flex;
+        display: relative;
         flex-direction: row;
     }
     .encriptar{
-        width: 100%;
+        width: 90%;
     
     }
     .texto{
@@ -266,27 +264,35 @@ html, body {
     }
     .botones{
         width: 80%;
-        left: 10%;
+        left: 17%;
         top: 70%;
     }
     .btn-encriptar,.btn-desencriptar{
         width: 40%;
         border-radius: 16%;
+        z-index: 1;
     }
     .btn-encriptar:hover,.btn-desencriptar:hover{
         margin: 0.3%;
         width: 47,5%;
         padding: 1.8%;
     }
+    .btn-copiar{
+        top: 0%;
+        width: none;
+        visibility: hidden;
+
+    }
     .encriptado{
         width: 80%;
-        height: 15%;
+        height: 14%;
         left: 10%;
-        top: 80%;
+        top: 76%;
     }
     .mensaje-encriptado{
         width: 100%;
         top: 5%;
+
     }
     .encriptado img{
         top: 0;
@@ -294,8 +300,28 @@ html, body {
         visibility:hidden ;
     }
     .footer {
-        padding: 8px 0;
+        padding: 15px 0;
         font-size: 14px;
+        text-align: start;
+        margin-top: auto;
+        
     }
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header img {
+        margin: 0 auto;
+
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size:1em;
+        position: flex;
+        text-align: center;
+    }
+
 
 }

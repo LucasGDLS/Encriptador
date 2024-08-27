@@ -6,8 +6,15 @@
     <title>Encriptador de textos</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
+    <header class="header">
+        <div class="header-content">
+            <img src="img/logo.png" alt="Logo" class="logo">
+            <h1>Encriptador de Textos</h1>
+        </div>
+    </header>
     <div class="container">
         <div class="encriptar">
             <textarea 
@@ -16,20 +23,26 @@
             id="texto"
             cols="30"
             rows="10"
-            placeholder="Ingrese su texto"    ></textarea>
+            placeholder="Ingrese su texto"
+            oninput="this.value = this.value.toLowerCase()"
+            ></textarea>
         </div>
         <div class="terminos">
+            <img src="img/bi_exclamation-circle-fill.png" alt="exclamacion" margin="0">
             <p>Solo letras minusculas y sin acentos</p>
         </div>
         <div class="botones">
             <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
-            <input type="button" class="btn-desencriptar" value="Desentriptar" onclick="desencriptar()">
+            <input type="button" class="btn-desencriptar" value="Desencriptar" onclick="desencriptar()">
+        </div>
+        <div class="copiar">
+            <button class="btn-copiar" type="button" onclick="copiarTexto()">Copiar texto</button>
         </div>
         <div class="encriptado">
-            <img src="img/Muñeco.png" class="muñeco" alt="">
+            <img src="img/Muñeco.png" class="muñeco" alt="avatar" id="muñeco">
             <div class="mensaje-encriptado" id="mensaje-encriptado">
                 <h2 id="titulo-mensaje">Ningun mensaje encontrado</h2>
-                <p>Ingresa el texto que deseas encriptar o desencriptar</p>
+                <p id="parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
                 <!--textarea 
                 name="mensaje"
                 class="mensaje"
@@ -40,7 +53,9 @@
             </div>
         </div>
     </div>
-    
+    <footer class="footer">
+        <p>&copy; 2024 LucasgdlsDev. Gracias Alura y Oracle!.</p>
+    </footer>
 </body>
 <script src="index.js"></script>
 </html>

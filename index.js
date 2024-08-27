@@ -1,8 +1,7 @@
 function encriptar (){
     let texto = document.getElementById("texto").value;
-    let tituloMensaje= document.getElementById("titulo-mensaje")
-    let parrafo = document.getElementById("parrafo")
-    let muñeco = document.getElementsByClassName("muñeco")
+    let tituloMensaje= document.getElementById("titulo-mensaje");
+    let parrafo = document.getElementById("parrafo");
 
     let textoCifrado = texto
                         .replace(/e/gi,"enter")
@@ -13,10 +12,10 @@ function encriptar (){
                         if(document.getElementById("texto").value.length != 0){
                             document.getElementById("texto").value=textoCifrado;
                             tituloMensaje.textContent = "Texto encriptado con éxito";
-                            parrafo.textContent = "";
-                            muñeco.src = "./img/encriptado.jpg";  
+                            parrafo.textContent=" "
+                            muñeco.src = "./img/okey.jpg"; 
                         }   else{
-                            muñeco.src = "./img/muñeco.png";
+                            muñeco.src = "./img/Muñeco.png";
                             tituloMensaje.textContent = "Ningún mensaje fue encontrado";
                             parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
                             swal("Ooops!", "Debes ingresar un texto", "warning");
@@ -39,11 +38,19 @@ function encriptar (){
             document.getElementById("texto").value = textoCifrado;
             tituloMensaje.textContent = "Texto desencriptado con éxito";
             parrafo.textContent = "";
-            muñeco.src = "./img/desencriptado.jpg";
+            muñeco.src = "./img/desencriptar.png";
           } else {
-            muñeco.src = "./img/muñeco.png";
+            muñeco.src = "./img/Muñeco.png";
             tituloMensaje.textContent = "Ningún mensaje fue encontrado";
             parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
             swal("Ooops!", "Debes ingresar un texto", "warning");
           }
       }
+      function copiarTexto() {
+        const texto = document.getElementById("texto").value;
+        navigator.clipboard.writeText(texto).then(() => {
+            swal("Texto copiado al portapapeles");
+        }).catch(err => {
+            console.error("Error al copiar el texto: ", err);
+        });
+    }
